@@ -8,4 +8,4 @@ jobs:
       - checkout
       - run: echo "Hello Circle CI. Hello world."
       - run: go test
-      - run: echo "Circle CI: success go test."
+      - run: echo "Circle CI. success go test."
