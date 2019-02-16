@@ -8,8 +8,9 @@ func Test_IsFizz(t *testing.T) {
     cases := []struct {
         name string
         in  int
-        out bool 
+        out bool
     }{
+        {name:"Fizz False", in: 3, out: false,},
         {name:"Fizz True", in: 3, out: true,},
     }
 
