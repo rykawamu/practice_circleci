@@ -1,0 +1,9 @@
+version: 2 # use Circle CI 2.0
+jobs:
+  build:
+    docker: # use docker
+      # CircleCI Go images available at: https://hub.docker.com/r/circleci/golang/
+      - image: circleci/golang:1.11.5
+    steps: # checkout + alpha
+      - checkout
+      - run: echo "Hello Circle CI Hello world."
