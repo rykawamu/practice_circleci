@@ -6,10 +6,12 @@ jobs:
     docker: # use docker
       # CircleCI Go images available at: https://hub.docker.com/r/circleci/golang/
       - image: circleci/golang:1.11.5
-    working_directory: /home/circleci/go/src/github.com/sample/pmd2cs
+    working_directory: /home/circleci/go/src/github.com/rykawamu/practice_circleci
     steps: # checkout + alpha
       - checkout
       - run: echo "Hello Circle CI. Hello world."
+      - run: echo 'export PATH=${GOPATH}/bin/:${PATH}' >> $BASH_ENV
+      - run: go vet ./...
       - run: go get -u golang.org/x/lint/golint
       - run: golint ./...
       - run: echo "Circle CI. success go test."
