@@ -6,4 +6,6 @@ jobs:
       - image: circleci/golang:1.11.5
     steps: # checkout + alpha
       - checkout
-      - run: echo "Hello Circle CI Hello world."
+      - run: echo "Hello Circle CI. Hello world."
+      - run: go test
+      - run: echo "Circle CI: success go test."
