@@ -54,3 +54,31 @@ func Test_IsBuzz(t *testing.T) {
        })
     }
 }
+
+func Test_FizzBuzz(t *testing.T) {
+
+    cases := []struct {
+        name string
+        in  int
+        out string
+    }{
+        {name:"1 is [1]", in: 1, out: "1",},
+        {name:"3 is [Fizz]", in: 3, out: "Fizz",},
+        {name:"5 is [Buzz]", in: 5, out: "Buzz",},
+        {name:"15 is [FizzBuzz]", in: 15, out: "FizzBuzz",},
+        {name:"18 is [Fizz]", in: 18, out: "Fizz",},
+        {name:"19 is [19]", in: 19, out: "19",},
+        {name:"20 is [Buzz]", in: 20, out: "Buzz",},
+        {name:"30 is [FizzBuzz]", in: 30, out: "FizzBuzz",},
+    }
+
+    for _, tt := range cases {
+       st := tt
+       t.Run(st.name, func(t *testing.T){
+           s := FizzBuzz(st.in)
+           if s != st.out {
+               t.Fatal("出力値が異なる[", st.in, "]=>[", s, "] [" , st.out , "]")
+           }
+       })
+    }
+}
